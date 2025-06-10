@@ -4,6 +4,7 @@ test('Login and save storage state', async ({ page }) => {
 
   await page.goto('');
 
+  await page.waitForTimeout(10000)
   await page.getByRole('textbox', { name: 'Username:' }).fill('Tester');
   await page.getByRole('textbox', { name: 'Password:' }).fill('test');
   await page.getByRole('button', { name: 'Login' }).click();
