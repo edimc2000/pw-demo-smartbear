@@ -30,7 +30,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: true,
+    headless: false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     //baseURL: process.env.baseURL,
 
@@ -60,7 +60,8 @@ export default defineConfig({
       testDir: './tests/setup',
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: process.env.loginURL
+        // baseURL: process.env.loginURL
+        baseURL: `${process.env.baseURL}/login.aspx`
        },
     },
 
