@@ -5,7 +5,7 @@ test.describe('Home Page verification', () => {
    
     await page.goto('')
     
-    expect(page.url().toLowerCase()).toContain('/weborders/');
-    expect(await page.title()).toContain('Web Orders');
+    expect(page.url().toLowerCase()).toContain('/weborders/')
+    expect(await page.title()).toContain('Web Orders')
   });
 });
