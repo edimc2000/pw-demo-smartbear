@@ -10,8 +10,7 @@ test.describe('Home Page verification', () => {
     expect(page.url().toLowerCase()).toContain('/weborders/')
     expect(await page.title()).toContain('Web Orders')
 
-    await page.waitForTimeout(5000)
-
+    await page.waitForTimeout(1000)
     await expect(page).toHaveScreenshot({
       fullPage: true,
       clip: {
@@ -23,7 +22,7 @@ test.describe('Home Page verification', () => {
       timeout: 1000 
     })
 
-
+await page.waitForTimeout(1000)
 
       await expect(page).toHaveScreenshot({
       fullPage: true,
@@ -37,7 +36,7 @@ test.describe('Home Page verification', () => {
     })
 
 
-    // await page.waitForTimeout(5000)
+    await page.waitForTimeout(1000)
 
 
   });
