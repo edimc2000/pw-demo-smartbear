@@ -19,7 +19,8 @@ test.describe('Home Page verification', () => {
         y: 6,
         width: 245,
         height: 290
-      }
+      }, 
+      timeout: 1000 
     })
 
 
@@ -31,7 +32,8 @@ test.describe('Home Page verification', () => {
         y: 67,
         width: 925,
         height: 106
-      }
+      }, 
+      timeout: 1000 
     })
 
 
