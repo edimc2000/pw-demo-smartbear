@@ -24,21 +24,26 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'never'}],
+    ['html', { open: 'never' }],
     ['list'],
-    ['junit', { outputFile: 'junitReports/reports.xml'}],
+    ['junit', { outputFile: 'junitReports/reports.xml' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless:  process.env.CI ? true : false,
+    headless: process.env.CI ? true : false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     //baseURL: process.env.baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-     launchOptions: {
-      args: ['--window-position=3400,0'], // Example: position at (100, 100)
+    launchOptions: {
+      args: [
+        '--window-position=3400,0',
+        '--font-render-hinting=none',
+        '--disable-skia-runtime-opts',
+        '--disable-font-subpixel-positioning',
+        '--disable-lcd-text',], // Example: position at (100, 100)
     },
   },
 
@@ -48,21 +53,22 @@ export default defineConfig({
       name: 'SmartBear E2E Tests - Chrome',
       testDir: './tests/e2e-tests',
       dependencies: ['SmartBear Setup Tests'],
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         baseURL: process.env.baseURL,
-        storageState: './auth/smartlogin.json' 
+        storageState: './auth/smartlogin.json',
+
       },
     },
 
     {
       name: 'SmartBear Setup Tests',
       testDir: './tests/setup',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         // baseURL: process.env.loginURL
         baseURL: `${process.env.baseURL}/login.aspx`
-       },
+      },
     },
 
     // {
