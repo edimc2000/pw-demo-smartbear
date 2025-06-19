@@ -7,7 +7,7 @@ test.describe('Home Page verification', () => {
   test('Validate title and url', async ({ page }) => {
 
     await page.goto('', { waitUntil: "domcontentloaded", })
-    expect(page.url().toLowerCase()).toContain('/weborders/')
+    expect(await page.url().toLowerCase()).toContain('/weborders/')
     expect(await page.title()).toContain('Web Orders')
 
 

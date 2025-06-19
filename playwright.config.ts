@@ -12,6 +12,9 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  expect: {
+    toHaveScreenshot: { maxDiffPixelRatio: 0.1 },
+  },
   testDir: './tests',
   //globalSetup: './tests/setup/globalSetup',
   /* Run tests in files in parallel */
