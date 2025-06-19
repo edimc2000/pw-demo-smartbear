@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  test:
+  morecores:
     timeout-minutes: 60
     runs-on: cores
     env:
@@ -32,15 +32,7 @@ jobs:
         retention-days: 30
 
 
-name: SmartBear Tests 2
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
-jobs:
-  test:
+  lesscores:
     timeout-minutes: 60
     runs-on: smartbear
     env:
