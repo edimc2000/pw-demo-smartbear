@@ -13,7 +13,7 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  */
 export default defineConfig({
   expect: {
-    toHaveScreenshot: { maxDiffPixelRatio: 100 },
+    toHaveScreenshot: { maxDiffPixels: 100 },
   },
   testDir: './tests',
   //globalSetup: './tests/setup/globalSetup',
