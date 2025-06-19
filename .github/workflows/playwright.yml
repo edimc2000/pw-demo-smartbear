@@ -32,6 +32,13 @@ jobs:
         retention-days: 30
 
 
+name: SmartBear Tests 2
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
 jobs:
   test:
     timeout-minutes: 60
