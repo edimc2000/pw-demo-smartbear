@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: smartbear
     env:
       baseURL: ${{ vars.BASE_URL }}
       loginURL: ${{ vars.LOGIN_URL }}
